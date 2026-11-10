@@ -65,21 +65,23 @@
 
   <section id="introduction">
     <h2>Introduction</h2>
-    <p>This project uses an <strong>Arduino Uno</strong>, two <strong>LDRs</strong>, a <strong>stepper motor</strong> and an
-      <strong>LCD screen</strong> to operate a light-sensitive bird feeder. It aligns with the UN's Sustainability Development Goals in the area of Reducing Inequalities and Responsible Consumption and Production. The system detects the level of food in the feeder and alerts users when it is low. This addresses inequality by easing the cognitive load for neurodivergent pet owners, and responsible consumption by ensuring birds have a consistent food supply while minimizing waste.
-    </p>
+    <p>This project uses an <strong>Arduino Uno</strong>, a <strong>stepper motor</strong>, an <strong>infrared sensor</strong>, an <strong>LCD screen</strong>, and a <strong>potentiometer</strong> to operate a pet feeder. It aligns with the WHO's Sustainability Development Goals in the area of Reducing Inequalities and Responsible Consumption and Production.</p>
+    <p>The goal of the project is to create a system that can dispense food at regular intervals using delay. A stepper motor will operate an augur that turns a certain number of timesat predetermined intervals. The size of the portions (i.e. the number of times the augur turns) is controlled by a potentiometer. An infrared sensor will detect when the amount of food in the dispenser is low and display this on an LCD screen.</p>
+    <p>This addresses inequality by easing the cognitive load for neurodivergent pet owners, and responsible consumption by ensuring the pet in question has a consistent food supply while minimizing waste.</p>
+    <p>Potential roadblocks include the time taken to print the augur, the number of ports available on the Arduino, and the complexity of integrating all components.</p>
+
   </section>
 
   <section id="circuit-diagram">
     <h2>Circuit Diagram</h2>
-    <p>One LDR measures whether the container is full, and the other measures whether the food level is below a certain threshold. The status is displayed on the LCD screen. The stepper motor operates the lid of the container.</p>
+    <p>A stepper motor turns an augur at predetermined intervals to dispense food into a bowl. An infrared sensor detects when the level of food in the dispenser is low, and the LCD screen displays the status. A potentiometer can be used to adjust portion size by determining the number of rotations of the augur.</p>
     <img src="collision-warning-system-Arduino.jpg" alt="Arduino collision warning system">
   </section>
 
   <section id="environment">
     <h2>Environmental Impact Assessment</h2>
     <ul>
-      <li><strong>Materials:</strong> The Arduino Uno is RoHS and WEEE compliant, limiting hazardous substances.
+      <li><strong>Materials:</strong> The Arduino Uno is RoHS and WEEE compliant, limiting hazardous substances. The augur is 3D printed using PLA, a biodegradable material.
       </li>
       <li><strong>Energy Efficiency:</strong> The circuit draws minimal power (~50 mA at 5V), ideal for USB or
         solar power.</li>
@@ -110,25 +112,11 @@
           <td><a href="https://store-usa.arduino.cc/products/arduino-uno-rev3">Arduino Store</a></td>
         </tr>
         <tr>
-          <td>HC-SR04 Ultrasonic Sensor</td>
-          <td>1</td>
-          <td>$3.95</td>
-          <td>$3.95</td>
-          <td><a href="https://www.adafruit.com/product/3942">Adafruit</a></td>
-        </tr>
-        <tr>
           <td>Passive Buzzer</td>
           <td>1</td>
           <td>$0.95</td>
           <td>$0.95</td>
           <td><a href="https://www.sparkfun.com/passive-buzzer-module.html">SparkFun</a></td>
-        </tr>
-        <tr>
-          <td>LEDs (Red, Yellow, Green)</td>
-          <td>3</td>
-          <td>$0.20</td>
-          <td>$0.60</td>
-          <td>Adafruit</td>
         </tr>
         <tr>
           <td>220 Ω Resistors</td>
@@ -279,11 +267,11 @@ void loop() {
 
   <ul>
     <li>
-      Arduino Project Hub. (n.d.). 
-      <em>Arduino DIY LED Control with LDR Sensor (Photoresistor).</em> 
-      Arduino Project Hub. 
-      <a href="https://projecthub.arduino.cc/krishna_agarwal/arduino-diy-led-control-with-ldr-sensor-photoresistor-fa011f" target="_blank" rel="noopener noreferrer">
-        https://projecthub.arduino.cc/krishna_agarwal/arduino-diy-led-control-with-ldr-sensor-photoresistor-fa011f
+      Makershop.de. (n.d.). 
+      <em>Datasheet I2C 1602 Serial LCD Module.</em> 
+      Makershop.de. 
+      <a href="https://www.makershop.de/download/I2C-LCD-interface.pdf" target="_blank" rel="noopener noreferrer">
+        https://www.makershop.de/download/I2C-LCD-interface.pdf
       </a>
     </li>
 
@@ -295,7 +283,22 @@ void loop() {
         https://humber.primo.exlibrisgroup.com/nde/fulldisplay?vid=01OCLS_HUMB:REPOSITORY_NDE&lang=en&collectionId=8152966210007314&docid=alma991001631587007314&adaptor=Local%20Search%20Engine&context=L&isFrbr=false&isHighlightedRecord=false&state=#nde.brief.results.tabs.digitalVersions
       </a>
     </li>
-
+    <li>
+      Arduino Project Hub. (n.d.). 
+      <em>Servo Motor Basics with Arduino.</em> 
+      Arduino Project Hub. 
+      <a href="https://docs.arduino.cc/learn/electronics/servo-motors/" target="_blank" rel="noopener noreferrer">
+        https://docs.arduino.cc/learn/electronics/servo-motors/
+      </a>
+    </li>
+     <li>
+      Arduino Project Hub. (n.d.). 
+      <em>Using IR Sensor (TCRT 5000) With Arduino.</em> 
+      Arduino Project Hub. 
+      <a href="https://projecthub.arduino.cc/abhilashpatel121/using-ir-sensor-tcrt-5000-with-arduino-60cc92" target="_blank" rel="noopener noreferrer">
+        https://projecthub.arduino.cc/abhilashpatel121/using-ir-sensor-tcrt-5000-with-arduino-60cc92
+      </a>
+    </li>
 
 
 </body>
