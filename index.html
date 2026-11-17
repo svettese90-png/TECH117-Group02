@@ -57,6 +57,7 @@
     <p><strong>Instructor:</strong> Ph.D. Ana Rodrigues</p>
     <p><strong>Team Members:</strong></p>
     <ul>
+      <li>Shammah Anegbode</li>
       <li>Danil Kirichenko</li>
       <li>Kuldeep Singh Chahal</li>
       <li>Steve Vettese</li>
@@ -65,30 +66,54 @@
 
   <section id="introduction">
     <h2>Introduction</h2>
-    <p>This project uses an <strong>Arduino Uno</strong>, a <strong>stepper motor</strong>, an <strong>infrared sensor</strong>, an <strong>LCD screen</strong>, and a <strong>potentiometer</strong> to operate a pet feeder. It aligns with the WHO's Sustainability Development Goals in the area of Reducing Inequalities and Responsible Consumption and Production.</p>
-    <p>The goal of the project is to create a system that can dispense food at regular intervals using delay. A stepper motor will operate an augur that turns a certain number of timesat predetermined intervals. The size of the portions (i.e. the number of times the augur turns) is controlled by a potentiometer. An infrared sensor will detect when the amount of food in the dispenser is low and display this on an LCD screen.</p>
+    <p>This project uses an <strong>Arduino Uno</strong>, a <strong>stepper motor</strong>, an <strong>LCD screen</strong>, and a <strong>potentiometer</strong> to operate a pet feeder. It aligns with the WHO's Sustainability Development Goals in the area of Reducing Inequalities and Responsible Consumption and Production.</p>
+    <p>The goal of the project is to create a system that can dispense food at regular intervals using delay. A stepper motor will operate an augur that turns a certain number of timesat predetermined intervals. The size of the portions (i.e. the number of times the augur turns) is controlled by a potentiometer. If possible, a pressure sensor can be placed under the bowl to detect the weight of the food in the bowl.</p>
     <p>This addresses inequality by easing the cognitive load for neurodivergent pet owners, and responsible consumption by ensuring the pet in question has a consistent food supply while minimizing waste.</p>
-    <p>Potential roadblocks include the time taken to print the augur, the number of ports available on the Arduino, and the complexity of integrating all components.</p>
+    <p>Potential roadblocks include the time taken to print the augur, the number of ports available on the Arduino, and the complexity of integrating all components. The augur was thankfully prointed in about a week, and the number of ports on the Arduino is sufficient (even allowing for more components if desired) when taking analog ports into account. The complexity of integrating all components can be mitigated by determining what is absolutely necessary, incorporating those components, and then adding components as desired, if possible.</p>
 
   </section>
 
   <section id="circuit-diagram">
     <h2>Circuit Diagram</h2>
-    <p>A stepper motor turns an augur at predetermined intervals to dispense food into a bowl. An infrared sensor detects when the level of food in the dispenser is low, and the LCD screen displays the status. A potentiometer can be used to adjust portion size by determining the number of rotations of the augur.</p>
+    <p>A stepper motor turns an augur at predetermined intervals to dispense food into a bowl. The LCD screen displays the portion size. A potentiometer can be used to adjust portion size by determining the number of rotations of the augur.</p>
     <img src="collision-warning-system-Arduino.jpg" alt="Arduino collision warning system">
   </section>
 
   <section id="environment">
     <h2>Environmental Impact Assessment</h2>
     <ul>
-      <li><strong>Materials:</strong> The Arduino Uno is RoHS and WEEE compliant, limiting hazardous substances. The augur is 3D printed using PLA, a biodegradable material.
-      </li>
+      <li><strong>Materials:</strong> The Arduino Uno is RoHS and WEEE compliant, limiting hazardous substances. The augur is 3D printed using PLA, a biodegradable material. The can used for food storage is a recyclable plastic Folger's coffee can. The bowl will be made from a sustainable material such as ceramic or stainless steel.</li>
       <li><strong>Energy Efficiency:</strong> The circuit draws minimal power (~50 mA at 5V), ideal for USB or
         solar power.</li>
       <li><strong>Reusability:</strong> All components are modular and reusable, reducing electronic waste.</li>
       <li><strong>Packaging & Shipping:</strong> Ordering all components from a single supplier helps minimize
         carbon footprint.</li>
     </ul>
+
+      <table>
+      <thead>
+        <tr>
+          <th>Alternative</th>
+          <th>Advantages</th>
+          <th>Disadvantages</th>
+          <th>Sustainability Evaluation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Adding pressure sensor to bottom of bowl</td>
+          <td>Helps determine how much food needs to be dispensed,<br>amount can be output to the LCD screen.</td>
+          <td>Not connected to the timer, so actual amount dispensed still needs to be determined manually.<br>Also adds complexity to the system as each sensor requires two jumper wires and two ports.</td>
+          <td>Sustainable due to minimal power requirements.</td>
+       </tr>
+        <tr>
+          <td>Adding infrared sensor to the container</td>
+          <td>Useful for detecting low food levels in the container.<br>Result can be output to the LCD screen, alerting user to refill.</td>
+          <td>Sensors can be finnicky, and distribution of food in the container may not<br>reflect actual levels, resulting in false readings. Adds complexity to the system.</td>
+          <td>Sustainable due to minimal power requirements.</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <section id="bom">
